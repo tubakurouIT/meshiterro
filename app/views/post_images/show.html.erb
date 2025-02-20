@@ -6,6 +6,17 @@
   <p>ユーザーネーム:<%= @post_image.user.name %></p>
   <p>投稿日:<%= @post_image.created_at.strftime('%Y/%m/%d') %></p>
 
+  <p class="card-title">
+    <%= link_to(post_image_path(@post_image.id), class:"text-dark") do %>
+    <strong><i class="fa-solid fa-flag"></i><span> <%= @post_image.shop_name %></span></strong>
+    <% end %>
+  </p>
+  <p class="card-title">
+    <span><i class="fa-solid fa-location-dot"></i> <%= @post_image.address %></span>
+  </p>
+  <p class="card-title">説明：<%= @post_image.caption %></p>
+
+
   <% if @post_image.user == current_user %>
     <%= link_to "削除", post_image_path(@post_image),method: :delete %>
   <% end %>

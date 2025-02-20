@@ -9,7 +9,10 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update]
 
-    root to: "homes#top"
-    get 'homes/about' => 'homes#about', as: 'about'
+  root to: "homes#top"
+  get 'homes/about' => 'homes#about', as: 'about'
+
+
+  resource :map, only: [:show]
 
 end
